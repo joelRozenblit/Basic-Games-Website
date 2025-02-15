@@ -1,0 +1,81 @@
+/* כללי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive, sans-serif;
+    color: #e6ff01;
+}
+
+/* עיצוב גוף הדף */
+body {
+    background-color: #f8ee27;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* מלא את כל הגובה של הדף */
+    margin: 0;
+}
+
+/* מרכז את אלמנט ה-div_form */
+#div_form {
+    background-color: rgb(62, 3, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* גודל קבוע לטופס */
+    text-align: center;
+}
+
+/* כותרות */
+h1, h2 {
+    color: #d8de25;
+}
+
+/* עיצוב השדות */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #3498db;
+}
+
+/* הודעות שגיאה */
+p {
+    color: red;
+    font-size: 16px;
+    padding: 5px;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+}
+
+/* כפתור שליחה */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* קישורים */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

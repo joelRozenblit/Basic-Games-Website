@@ -1,0 +1,222 @@
+:root {
+  --deafultBG: rgb(220, 136, 26);
+  --card-color: rgb(160, 138, 100);
+  /* צבע ברירת מחדל של הקלפים */
+  --card-flip-background: rgb(0, 146, 134);
+  /* צבע הקונטיינר בזמן הסיבוב */
+
+}
+
+body {
+  font-family: cursive;
+  text-align: center;
+  color: rgb(240, 148, 28);
+  background-color: var(--deafultBG);
+}
+
+.container {
+  background-color: rgb(0, 146, 134);
+  min-height: 650px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#difficultyChoosing button {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+button {
+  font-size: 1.5rem;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  background-color: rgb(255, 145, 0);
+  color: rgb(128, 79, 19);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+button:hover {
+  color: burlywood;
+  background-color: rgb(163, 93, 0);
+  transform: scale(1.05);
+}
+
+#cardsDiv {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(160, 138, 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  /* אפקט תלת-ממדי */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-image: url('/img/memory/back.png');
+  /* תמונה אחידה */
+  background-size: cover;
+  /* כיסוי מלא */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.card-back {
+  background-color: rgb(160, 138, 100);
+  transform: rotateY(180deg);
+}
+
+
+
+.card img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.successMessage {
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 35%;
+  color: rgb(102, 58, 1);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.success-content {
+  background-color: var(--deafultBG);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.success-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: rgb(0, 146, 134);
+  text-shadow: 1px 1px 1px black;
+}
+
+.success-content button {
+  font-family: cursive;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: rgb(0, 146, 134);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-content button:hover {
+  background-color: rgb(163, 93, 0);
+  color: rgb(0, 146, 134);
+  transform: scale(1.05);
+}
+
+#difficultyBtn {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.5rem;
+  background-color: rgb(246, 161, 13);
+  color:  rgb(163, 93, 0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#difficultyBtn:hover {
+  background-color: rgb(163, 93, 0);
+  transform: scale(1.05);
+}
+
+#statusDisplay{
+  
+  font-size: 1.3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+
+
+
