@@ -97,7 +97,7 @@ const drawCards = () => {
         cardBack.classList.add("card-back");
         
         // תמונת רקע לקלף הפוך
-        cardBack.innerHTML = `<img src="/img/memory/${cardsArr[i]}.png" alt="Card">`;
+        cardBack.innerHTML = `<img src="img/memory/${cardsArr[i]}.png" alt="Card">`;
         // ערך ייחודי לכל קלף
         card.dataset.cardValue = cardsArr[i];
 
