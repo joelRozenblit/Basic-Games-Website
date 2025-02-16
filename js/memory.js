@@ -31,7 +31,12 @@ const chooseGameMode = () => {
         startGame()
     });
     medium.addEventListener("click", () => {
-        createCards(8)
+        if (window.innerWidth > 600) {
+            createCards(8);
+        }
+        else {
+            createCards(9)
+        }
         startGame()
     });
     hard.addEventListener("click", () => {
@@ -71,12 +76,12 @@ const createCards = (cardsNum) => {
 // יצירת מערך קלפים
 const drawCards = () => {
     cardsDiv.innerHTML = ""
-    
-    //
-    if (window.innerWidth >= 600) {
+
+    // 
+    if (window.innerWidth >= 600 || cardsArr.length <= 4) {
         //  הגדרת עמודות בסך שורש ריבועי של מספר הקלפים לתצוגה ריבועית
         cardsDiv.style.gridTemplateColumns = `repeat(${Math.sqrt(cardsArr.length)}, 1fr)`;
-    } else if (window.innerWidth < 600) {
+    } else {
         cardsDiv.style.gridTemplateColumns = `repeat(3, 1fr)`;
     }
 
@@ -95,15 +100,15 @@ const drawCards = () => {
         cardInner.classList.add("card-inner");
         cardFront.classList.add("card-front");
         cardBack.classList.add("card-back");
-        
+
         // תמונת רקע לקלף הפוך
         cardBack.innerHTML = `<img src="img/memory/${cardsArr[i]}.png" alt="Card">`;
         // ערך ייחודי לכל קלף
         card.dataset.cardValue = cardsArr[i];
 
-        if(window.innerWidth < 600) {
+        if (window.innerWidth < 600) {
             console.log("card.style.width");
-            
+
             card.style.width = "80px"
             card.style.height = "80px"
             console.log(card.style.width);
@@ -192,7 +197,7 @@ const showSuccessMessage = () => {
     successMessage.classList.remove("hidden"); // הצגת ההודעה
     difficultyBtn.classList.add("hidden"); // הסתרת כפתור בחירת הקושי
     statusDisplay.classList.add("hidden")
-    clearInterval(timerInterval); 
+    clearInterval(timerInterval);
 
     successMessage.innerHTML = `
     <p>Time Passed:${formatTime(timeElapsed)} tries:${attempts}</p>
