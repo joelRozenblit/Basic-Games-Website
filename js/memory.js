@@ -160,11 +160,11 @@ const checkMatch = () => {
         matchedCards++;
         flippedCards = []; // איפוס המערך הזמני
 
-        playSound("/sounds/success.mp3");
+        playSound("sounds/success.mp3");
 
         // בדיקה אם כל הזוגות נמצאו
         if (matchedCards === cardsArr.length / 2) {
-            playSound("/sounds/cheering.mp3");
+            playSound("sounds/cheering.mp3");
 
             setTimeout(() => {
                 showSuccessMessage();
