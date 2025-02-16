@@ -197,6 +197,7 @@ button:hover {
 
 #difficultyBtn:hover {
   background-color: rgb(163, 93, 0);
+  color: var(--deafultBG);
   transform: scale(1.05);
 }
 
