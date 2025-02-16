@@ -127,7 +127,7 @@ const drawCards = () => {
                 card.classList.add("flipped");
                 flippedCards.push(card);
 
-                playSound("/sounds/flip.mp3"); // השמעת צליל הפיכת קלף
+                playSound("sounds/flip.mp3"); // השמעת צליל הפיכת קלף
                 checkMatch(); // בדיקת התאמה
             }
         });
